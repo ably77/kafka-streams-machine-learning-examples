@@ -46,8 +46,8 @@ public class Kafka_Streams_MachineLearning_DL4J_DeepLearning_Iris_IntegrationTes
 	@ClassRule
 	public static final EmbeddedKafkaCluster CLUSTER = new TestEmbeddedKafkaCluster(1);
 
-	private static final String inputTopic = "IrisInputTopic";
-	private static final String outputTopic = "IrisOutputTopic";
+	private static final String inputTopic = "irisinputtopic";
+	private static final String outputTopic = "irisoutputtopic";
 
 	// Generated DL4J model
 	private File locationDL4JModel = new File("src/main/resources/generatedModels/DL4J/DL4J_Iris_Model.zip");
@@ -96,7 +96,7 @@ public class Kafka_Streams_MachineLearning_DL4J_DeepLearning_Iris_IntegrationTes
 		// Streams application.
 		final StreamsBuilder builder = new StreamsBuilder();
 
-		// Construct a `KStream` from the input topic "IrisInputTopic", where
+		// Construct a `KStream` from the input topic "irisinputtopic", where
 		// message values
 		// represent lines of text (for the sake of this example, we ignore
 		// whatever may be stored
@@ -141,7 +141,7 @@ public class Kafka_Streams_MachineLearning_DL4J_DeepLearning_Iris_IntegrationTes
 		streams.cleanUp();
 		streams.start();
 		System.out.println("Iris Prediction Microservice is running...");
-		System.out.println("Input to Kafka Topic 'IrisInputTopic'; Output to Kafka Topic 'IrisOutputTopic'");
+		System.out.println("Input to Kafka Topic 'irisinputtopic'; Output to Kafka Topic 'irisoutputtopic'");
 
 		//
 		// Step 2: Produce some input data to the input topic.
