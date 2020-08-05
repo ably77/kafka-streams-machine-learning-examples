@@ -52,8 +52,8 @@ public class Kafka_Streams_TensorFlow_Image_Recognition_Example_IntegrationTest 
 	@ClassRule
 	public static final EmbeddedKafkaCluster CLUSTER = new TestEmbeddedKafkaCluster(1);
 
-	private static final String inputTopic = "ImageInputTopic";
-	private static final String outputTopic = "ImageOutputTopic";
+	private static final String inputTopic = "imageinputtopic";
+	private static final String outputTopic = "imageoutputtopic";
 
 	// Prediction Value
 	private static String imageClassification = "unknown";

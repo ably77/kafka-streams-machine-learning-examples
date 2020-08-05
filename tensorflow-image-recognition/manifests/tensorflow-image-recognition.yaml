@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tensorflow-image-recognition
+spec:
+  selector:
+    matchLabels:
+      app: tensorflow-image-recognition
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tensorflow-image-recognition
+    spec:
+      containers:
+      - name: tensorflow-image-recognition
+        image: ably77/tensorflow-image-recognition:v1
