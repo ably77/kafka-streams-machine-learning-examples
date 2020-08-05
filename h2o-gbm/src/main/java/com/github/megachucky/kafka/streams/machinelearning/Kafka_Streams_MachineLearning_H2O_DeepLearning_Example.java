@@ -18,8 +18,8 @@ import hex.genmodel.easy.prediction.BinomialModelPrediction;
  * 
  * Creates a new Kafka Streams application for prediction of flight delays 
  * The application uses the GBM model "deeplearning_fe7c1f02_08ec_4070_b784_c2531147e451" (built with H2O.ai) to infer messages
- * sent to Kafka topic "AirlineInputTopic". The outcome of model inference is sent to
- * Kafka topic "AirlineOutputTopic".
+ * sent to Kafka topic "airlineinputtopic". The outcome of model inference is sent to
+ * Kafka topic "airlineoutputtopic".
  *
  * Main logic now in parent Class
  * Refactoring to utilize common @link Kafka_Streams_MachineLearning_H2O_Application class
@@ -36,7 +36,7 @@ public class Kafka_Streams_MachineLearning_H2O_DeepLearning_Example extends Kafk
 	public static void main(final String[] args) throws Exception {
 
 		// Configure Kafka Streams Application
-		final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
+		final String bootstrapServers = args.length > 0 ? args[0] : "my-cluster-kafka-bootstrap.myproject-dev:9092";
 		execute(bootstrapServers, APPLICATION_ID, modelClassName);
 	}
 

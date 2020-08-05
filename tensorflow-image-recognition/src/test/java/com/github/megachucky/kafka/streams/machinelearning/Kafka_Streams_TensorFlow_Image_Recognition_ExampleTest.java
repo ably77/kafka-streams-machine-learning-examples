@@ -35,7 +35,7 @@ public class Kafka_Streams_TensorFlow_Image_Recognition_ExampleTest {
 
     @Before
     public void setup() throws IOException {
-        testDriver = new TopologyTestDriver(Kafka_Streams_TensorFlow_Image_Recognition_Example.getStreamTopology(), Kafka_Streams_TensorFlow_Image_Recognition_Example.getStreamConfiguration("localhost:9092"));
+        testDriver = new TopologyTestDriver(Kafka_Streams_TensorFlow_Image_Recognition_Example.getStreamTopology(), Kafka_Streams_TensorFlow_Image_Recognition_Example.getStreamConfiguration("my-cluster-kafka-bootstrap.myproject-dev:9092"));
     }
 
     @After

@@ -38,7 +38,7 @@ public class Kafka_Streams_TensorFlow_Image_Recognition_Example {
 
 	public static void main(final String[] args) throws Exception {
 		// Configure Kafka Streams Application
-		final String bootstrapServers = args.length > 0 ? args[0] : "localhost:9092";
+		final String bootstrapServers = args.length > 0 ? args[0] : "my-cluster-kafka-bootstrap.myproject-dev:9092";
 		final Properties streamsConfiguration = getStreamConfiguration(bootstrapServers);
 		Topology topology = getStreamTopology();
 

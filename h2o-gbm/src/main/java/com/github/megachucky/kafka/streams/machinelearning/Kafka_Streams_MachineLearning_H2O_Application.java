@@ -19,9 +19,9 @@ import java.util.Properties;
  *
  *         Creates a new Kafka Streams application for prediction of flight
  *         delays The application uses the GBM model (built with
- *         H2O.ai) to infer messages sent to Kafka topic "AirlineInputTopic".
+ *         H2O.ai) to infer messages sent to Kafka topic "airlineinputtopic".
  *         The outcome of model inference is sent to Kafka topic
- *         "AirlineOutputTopic".
+ *         "airlineoutputtopic".
  *
  *  Refactored that all model use same base class, only modelName and applicationId passed in
  *  Used Kafka_Streams_MachineLearning_H2O_GBM_Example_Refactored class as baseline for this
@@ -30,8 +30,8 @@ import java.util.Properties;
  */
 public class Kafka_Streams_MachineLearning_H2O_Application {
 
-	public static final String INPUT_TOPIC = "AirlineInputTopic";
-	public static final String OUTPUT_TOPIC = "AirlineOutputTopic";
+	public static final String INPUT_TOPIC = "airlineinputtopic";
+	public static final String OUTPUT_TOPIC = "airlineoutputtopic";
 
 
 	public static void execute(String bootstrapServers, String applictionId, String modelClassName) throws Exception {
@@ -45,7 +45,7 @@ public class Kafka_Streams_MachineLearning_H2O_Application {
 		streams.cleanUp();
 		streams.start();
 		System.out.println("Airline Delay Prediction Microservice is running...");
-		System.out.println("Input to Kafka Topic 'AirlineInputTopic'; Output to Kafka Topic 'AirlineOutputTopic'");
+		System.out.println("Input to Kafka Topic 'airlineinputtopic'; Output to Kafka Topic 'airlineoutputtopic'");
 
 		// Add shutdown hook to respond to SIGTERM and gracefully close Kafka
 		// Streams
@@ -82,7 +82,7 @@ public class Kafka_Streams_MachineLearning_H2O_Application {
 		// Streams application.
 		final StreamsBuilder builder = new StreamsBuilder();
 
-		// Construct a `KStream` from the input topic "AirlineInputTopic", where
+		// Construct a `KStream` from the input topic "airlineinputtopic", where
 		// message values
 		// represent lines of text (for the sake of this example, we ignore
 		// whatever may be stored

@@ -39,7 +39,7 @@ public class Kafka_Streams_MachineLearning_H2O_GBM_ExampleTest {
                 testDriver = new TopologyTestDriver(
                                 Kafka_Streams_MachineLearning_H2O_GBM_Example.getStreamTopology(
                                                 Kafka_Streams_MachineLearning_H2O_GBM_Example.modelClassName),
-                                Kafka_Streams_MachineLearning_H2O_GBM_Example.getStreamConfiguration("localhost:9092",
+                                Kafka_Streams_MachineLearning_H2O_GBM_Example.getStreamConfiguration("my-cluster-kafka-bootstrap.myproject-dev:9092",
                                                 Kafka_Streams_MachineLearning_H2O_GBM_Example.APPLICATION_ID));
         }
 

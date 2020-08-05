@@ -52,8 +52,8 @@ public class Kafka_Streams_MachineLearning_H2O_GBM_Example_IntegrationTest {
 
 	public static final EmbeddedKafkaCluster CLUSTER = new TestEmbeddedKafkaCluster(1);
 
-	private static final String inputTopic = "AirlineInputTopic";
-	private static final String outputTopic = "AirlineOutputTopic";
+	private static final String inputTopic = "airlineinputtopic";
+	private static final String outputTopic = "airlineoutputtopic";
 
 	// Name of the generated H2O.ai model
 	private static String modelClassName = "com.github.megachucky.kafka.streams.machinelearning.models.gbm_pojo_test";
@@ -108,7 +108,7 @@ public class Kafka_Streams_MachineLearning_H2O_GBM_Example_IntegrationTest {
 		// Streams application.
 		final StreamsBuilder builder = new StreamsBuilder();
 
-		// Construct a `KStream` from the input topic "AirlineInputTopic", where
+		// Construct a `KStream` from the input topic "airlineinputtopic", where
 		// message values
 		// represent lines of text (for the sake of this example, we ignore
 		// whatever may be stored
@@ -174,7 +174,7 @@ public class Kafka_Streams_MachineLearning_H2O_GBM_Example_IntegrationTest {
 		streams.cleanUp();
 		streams.start();
 		System.out.println("Airline Delay Prediction Microservice is running...");
-		System.out.println("Input to Kafka Topic 'AirlineInputTopic'; Output to Kafka Topic 'AirlineOutpuTopic'");
+		System.out.println("Input to Kafka Topic 'airlineinputtopic'; Output to Kafka Topic 'AirlineOutpuTopic'");
 
 		//
 		// Step 2: Produce some input data to the input topic.

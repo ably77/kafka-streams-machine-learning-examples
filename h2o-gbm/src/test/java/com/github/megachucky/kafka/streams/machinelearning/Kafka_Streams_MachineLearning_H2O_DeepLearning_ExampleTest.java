@@ -39,7 +39,7 @@ public class Kafka_Streams_MachineLearning_H2O_DeepLearning_ExampleTest {
                                 Kafka_Streams_MachineLearning_H2O_DeepLearning_Example.getStreamTopology(
                                                 Kafka_Streams_MachineLearning_H2O_DeepLearning_Example.modelClassName),
                                 Kafka_Streams_MachineLearning_H2O_DeepLearning_Example.getStreamConfiguration(
-                                                "localhost:9092",
+                                                "my-cluster-kafka-bootstrap.myproject-dev:9092",
                                                 Kafka_Streams_MachineLearning_H2O_DeepLearning_Example.APPLICATION_ID));
         }
 
